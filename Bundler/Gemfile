@@ -1,0 +1,29 @@
+# frozen_string_literal: true
+source "https://rubygems.org"
+require 'rubygems'
+require 'bundler/setup'
+# gem "rails"
+ gem 'sqlite3'
+gem 'awesome_print'
+gem 'pry'
+
+
+require 'sqlite/sqlite_script'
+require '/ap/permissions'
+require '/pry/propina_script'
+
+admin_personal_info={'name'=>'juan', 'lastname'=>'lopez', 'birth_date'=>1921}
+admin_contact_info={'email'=>'ara_999@hotmail.com','mob'=>'4181012326'}
+admin_role= Role.new('users','contacts','promotions')
+admin= User.new(admin_personal_info, admin_contact_info, admin_role)
+ap admin_contact_info
+ap admin_personal_info
+ap admin_role.permissions
+
+ap admin_role.method = object.method
+puts tip(80)
+save_new_user('Alonso Maximiliano','amax@utng.edu.mx', 1990)
+
+users= save_new_user('Iszayana Coral','izco@utng.edu.mx', 2000)
+ap users
+
